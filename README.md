@@ -1,6 +1,11 @@
-# golang_web_app_bookings
+# Bookings and Reservations
 
-Full-stack web app built in Golang using the standard http library that allows a user to manage booking reservations.
+This is the repository for my bookings and reservations project.
+
+- Built in Go version 1.17
+- Uses the [chi router](https://github.com/go-chi/chi)
+- Uses Alex Edwards [SCS session management](https://github.com/alexedwards/scs)
+- Uses [NoSurf](https://github.com/justinas/nosurf)
 
 ## Local Development
 
