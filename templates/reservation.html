@@ -5,11 +5,7 @@
 {{end}}
 
 {{define "css"}}
-<style>
-    .redText {
-        color: red;
-    }
-</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker-bs5.min.css">
 {{end}}
 
 {{define "content"}}
@@ -18,16 +14,14 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <h1 class="mt-5">Search for Availability</h1>
-            <form action="/make-reservation" method="get" novalidate class="row g-3 needs-validation">
-                <div class="mb-3 col-md-6">
-                    <label for="startDate" class="form-label">Starting Date</label>
-                    <input required type="date" class="form-control" id="startDate" name="startDate" aria-describedby="startDateHelp">
-                    <div id="startDateHelp" class="form-text">Enter your starting date in the form of MM/DD/YYYY.</div>
-                </div>
-                <div class="mb-3 col-md-6">
-                    <label for="endDate" class="form-label">Ending Date</label>
-                    <input required type="date" class="form-control" id="endDate" name="endDate" aria-describedby="endDateHelp">
-                    <div id="endDateHelp" class="form-text">Enter your ending date in the form of MM/DD/YYYY.</div>
+            <form action="/make-reservation" method="get" novalidate class="needs-validation">
+                <div class="row g-3" id="reservation-dates">
+                    <div class="mb-3 col-md-6" id="reservation-dates">
+                        <input required type="text" name="start" class="form-control" placeholder="Arrival" autocomplete="off">
+                    </div>
+                    <div class="mb-3 col-md-6" id="reservation-dates">
+                        <input required type="text" name="start" class="form-control" placeholder="Departure" autocomplete="off">
+                    </div>
                 </div>
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary">Search Availability</button>
@@ -39,6 +33,7 @@
 {{end}}
 
 {{define "js"}}
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker-full.min.js"></script>
 <script>
     (function () {
     'use strict'
@@ -58,6 +53,13 @@
             form.classList.add('was-validated')
         }, false)
         })
-    })()
+    })();
+
+    // https://github.com/mymth/vanillajs-datepicker
+    const elem = document.getElementById('reservation-dates');
+    const rangepicker = new DateRangePicker(elem, {
+        // ...options
+        format: "mm-dd-yyyy"
+    });
 </script>
 {{end}}

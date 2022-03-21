@@ -2,10 +2,17 @@
 
 This is the repository for my bookings and reservations project.
 
+## Backend Details
+
 - Built in Go version 1.17
 - Uses the [chi router](https://github.com/go-chi/chi)
 - Uses Alex Edwards [SCS session management](https://github.com/alexedwards/scs)
 - Uses [NoSurf](https://github.com/justinas/nosurf)
+
+## Frontend Details
+
+- Uses [Bootstrap 5.1.3](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+- JavaScript
 
 ## Local Development
 
