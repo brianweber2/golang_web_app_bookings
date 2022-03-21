@@ -4,21 +4,60 @@
 - Reservation
 {{end}}
 
+{{define "css"}}
+<style>
+    .redText {
+        color: red;
+    }
+</style>
+{{end}}
+
 {{define "content"}}
 <div class="container">
-    <h1 class="mt-5">Search for Availability</h1>
-    <form action="/make-reservation" method="get">
-        <div class="mb-3">
-          <label for="startDate" class="form-label">Starting Date</label>
-          <input type="date" class="form-control" id="startDate" name="startDate" aria-describedby="startDateHelp">
-          <div id="startDateHelp" class="form-text">Enter your starting date in the form of YYYY-MM-DD.</div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h1 class="mt-5">Search for Availability</h1>
+            <form action="/make-reservation" method="get" novalidate class="row g-3 needs-validation">
+                <div class="mb-3 col-md-6">
+                    <label for="startDate" class="form-label">Starting Date</label>
+                    <input required type="date" class="form-control" id="startDate" name="startDate" aria-describedby="startDateHelp">
+                    <div id="startDateHelp" class="form-text">Enter your starting date in the form of MM/DD/YYYY.</div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="endDate" class="form-label">Ending Date</label>
+                    <input required type="date" class="form-control" id="endDate" name="endDate" aria-describedby="endDateHelp">
+                    <div id="endDateHelp" class="form-text">Enter your ending date in the form of MM/DD/YYYY.</div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Search Availability</button>
+                </div>
+            </form>
         </div>
-        <div class="mb-3">
-            <label for="endDate" class="form-label">Ending Date</label>
-            <input type="date" class="form-control" id="endDate" name="endDate" aria-describedby="endDateHelp">
-            <div id="endDateHelp" class="form-text">Enter your ending date in the form of YYYY-MM-DD.</div>
-          </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </div>
 </div>
+{{end}}
+
+{{define "js"}}
+<script>
+    (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    let forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+        }, false)
+        })
+    })()
+</script>
 {{end}}
