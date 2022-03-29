@@ -6,6 +6,7 @@
 
 {{define "css"}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker-bs5.min.css">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
 {{end}}
 
 {{define "content"}}
@@ -33,6 +34,8 @@
 {{end}}
 
 {{define "js"}}
+<!-- https://github.com/jaredreich/notie -->
+<script src="https://unpkg.com/notie"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker-full.min.js"></script>
 <script>
     (function () {
@@ -61,5 +64,12 @@
         // ...options
         format: "mm-dd-yyyy"
     });
+
+    function notify(msg, msgType) {
+        notie.alert({
+            type: msgType,
+            text: msg
+        })
+    }
 </script>
 {{end}}
