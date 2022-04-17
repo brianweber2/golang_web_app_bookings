@@ -1,0 +1,31 @@
+/* Overall styles */
+.datepicker {
+    z-index: 10000;
+}
+
+.swal2-actions {
+    z-index: auto !important;
+}
+
+#swal2-title {
+    font-size: 2rem;
+}
+
+.notie-container {
+    box-shadow: none;
+}
+
+/* Generals and Majors pages */
+.room-image {
+    max-width: 50%;
+}
+
+/* Footer */
+body > div.row.my-footer {
+    height: 5em;
+    background-color: #163b65;
+    margin-top: 1.5em;
+    padding: 1em;
+    color: #ffffff;
+    font-size: 80%;
+}
