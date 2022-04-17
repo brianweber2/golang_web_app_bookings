@@ -12,6 +12,8 @@ This is the repository for my bookings and reservations project.
 ## Frontend Details
 
 - Uses [Bootstrap 5.1.3](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+- Uses [notie](https://github.com/jaredreich/notie) for clean and simple notification, input, and selection suite
+- Uses [sweetalert2](https://sweetalert2.github.io/) for JavaScript popup boxes
 - JavaScript
 
 ## Local Development
@@ -59,10 +61,24 @@ Under `pkg/render` includes the following:
 ### templates
 
 * `layout.html` - defines the content shared across the application
-* `home.html` - defines the content a user will see on the application's home page
+* `index.html` - defines the content a user will see on the application's home page
 * `about.html` - defines the content a user will see on the application's about page
+* `contact.html` - defines the content a user will see on the application's contact page
+* `generals.html` - defines the content a user will see on the application's generals page
+* `majors.html` - defines the content a user will see on the application's majors page
+* `reservation.html` - defines the content a user will see on the application's reservation page
+* `search-availability.html` - defines the content a user will see on the application's search availability page
+
+### static
+
+Stores all static files such as images, CSS and JavaScript files.
 
 ## Endpoints Available
 
 * `/` - home page
 * `/about` - about page
+* `/contact` - contact page
+* `/generals-quarters` - generals page
+* `/majors-suite` - majors page
+* `/search-availability` - search availability page
+* `/make-reservation` - make reservation page

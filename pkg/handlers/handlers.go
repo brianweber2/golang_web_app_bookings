@@ -33,7 +33,7 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	remoteIP := r.RemoteAddr
 	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
 
-	render.RenderTemplate(w, "home.html", &models.TemplateData{})
+	render.RenderTemplate(w, "index.html", &models.TemplateData{})
 }
 
 // About is the about page handler
@@ -49,13 +49,13 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-// GeneralsQuarters is the generals-quarters page handler
-func (m *Repository) GeneralsQuarters(w http.ResponseWriter, r *http.Request) {
+// Generals is the generals-quarters page handler
+func (m *Repository) Generals(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "generals.html", &models.TemplateData{})
 }
 
-// MajorsSuite is the majors-suite page handler
-func (m *Repository) MajorsSuite(w http.ResponseWriter, r *http.Request) {
+// Majors is the majors-suite page handler
+func (m *Repository) Majors(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "majors.html", &models.TemplateData{})
 }
 
@@ -64,7 +64,12 @@ func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "contact.html", &models.TemplateData{})
 }
 
-// MakeReservation is the make reservation page handler
-func (m *Repository) MakeReservation(w http.ResponseWriter, r *http.Request) {
+// Reservation is the make reservation page handler
+func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "reservation.html", &models.TemplateData{})
+}
+
+// Availability renders the search availability page
+func (m *Repository) Availability(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "search-availability.html", &models.TemplateData{})
 }
