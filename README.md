@@ -66,7 +66,7 @@ Under `pkg/render` includes the following:
 * `contact.html` - defines the content a user will see on the application's contact page
 * `generals.html` - defines the content a user will see on the application's generals page
 * `majors.html` - defines the content a user will see on the application's majors page
-* `reservation.html` - defines the content a user will see on the application's reservation page
+* `make-reservation.html` - defines the content a user will see on the application's reservation page
 * `search-availability.html` - defines the content a user will see on the application's search availability page
 
 ### static
