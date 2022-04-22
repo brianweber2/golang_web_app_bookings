@@ -6,9 +6,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/brianweber2/bookings/pkg/config"
-	"github.com/brianweber2/bookings/pkg/models"
-	"github.com/brianweber2/bookings/pkg/render"
+	"github.com/brianweber2/bookings/internal/config"
+	"github.com/brianweber2/bookings/internal/models"
+	"github.com/brianweber2/bookings/internal/render"
 )
 
 // Repo is the repository used by the handlers
